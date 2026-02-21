@@ -18,11 +18,14 @@ function renderHabits(){
         const li = document.createElement("li");
 
         li.innerHTML = `
-        <label style="display:flex; align-items:center; gap:10px;">
-            <input type="checkbox" data-index="${index}" ${habit.completedToday ? "checked" : ""} />
-            <span> ${habit.name}</span>
-        </label>
-        `;
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+            <label style="display:flex; align-items:center; gap:10px;">
+                <input type="checkbox" data-index="${index}" ${habit.completedToday ? "checked" : ""} />
+                <span>${habit.name}</span>
+            </label>
+            <button data-delete="${index}">x</button>
+        </div>
+        `;     
 
         list.appendChild(li); 
         //creates a newly created <li> element into the habit list on the page
