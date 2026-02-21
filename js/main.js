@@ -21,7 +21,7 @@ function renderHabits(){
         <div style="display:flex; align-items:center; justify-content:space-between;">
             <label style="display:flex; align-items:center; gap:10px;">
                 <input type="checkbox" data-index="${index}" ${habit.completedToday ? "checked" : ""} />
-                <span>${habit.name}</span>
+                <span>${habit.name} - 🔥 ${habit.streak}</span>
             </label>
             <button data-delete="${index}">x</button>
         </div>
@@ -50,6 +50,12 @@ list.addEventListener("change", (e) => {
 
     const index = Number(e.target.dataset.index);
     habits[index].completedToday = e.target.checked;
+
+    if (e.target.checked) { 
+        habits[index].streak += 1;
+    } else { 
+        habits[index].streak = 0;
+    }
 
     renderHabits();
 });
