@@ -7,6 +7,14 @@ let habits = [];
 const saved = localStorage.getItem("habits");
 if (saved) habits = JSON.parse(saved);
 
+const today = new Date().toDateString();
+const lastVisit = localStorage.getItem("lastVisit");
+
+if (lastVisit !== today){
+    habits.forEach(h => (h.completedToday = false));
+    localStorage.setItem("lastVisit", today);
+}
+
 function renderHabits(){
     localStorage.setItem("habits", JSON.stringify(habits));
 
