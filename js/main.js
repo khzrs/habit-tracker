@@ -9,6 +9,9 @@ let habits = [];
 const saved = localStorage.getItem("habits");
 if (saved) habits = JSON.parse(saved);
 
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") document.body.classList.add("dark");
+
 const today = new Date().toDateString();
 const lastVisit = localStorage.getItem("lastVisit");
 
@@ -81,6 +84,9 @@ list.addEventListener("click", (e) => {
 
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+
+    const theme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
 });
 
 renderHabits();
