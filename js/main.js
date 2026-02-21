@@ -1,6 +1,8 @@
 const form = document.getElementById("habit-form");
 const input = document.getElementById("habit-name");
 const list = document.getElementById("habit-list");
+const toggle = document.getElementById("theme-toggle");
+
 
 let habits = [];
 
@@ -75,5 +77,10 @@ list.addEventListener("click", (e) => {
     habits.splice(index, 1);
     renderHabits();
 })
+
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
 
 renderHabits();
