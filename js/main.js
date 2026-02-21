@@ -68,4 +68,12 @@ list.addEventListener("change", (e) => {
     renderHabits();
 });
 
+list.addEventListener("click", (e) => {
+    if (!e.target.dataset.delete) return;
+
+    const index = Number(e.target.dataset.delete);
+    habits.splice(index, 1);
+    renderHabits();
+})
+
 renderHabits();
