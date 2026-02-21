@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HABIT TRACKER</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <header class="|container">
+            <h1>Habit Tracker</h1>
+            <p>Build streaks. Keep it simple.</p>
+        </header>
+
+        <main class="container">
+            <section class="card">
+                <h2>Add a habbit</h2>
+                <form id="habit-form">
+                    <label>
+                        Habit name
+                        <input id="habit-name" type="text" placeholder="e.g. Gym" required maxlength="40" />
+                    </label>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Today</h2>
+                <ul id="habit-list"></ul>
+            </section>
+        </main>
+
+        <script src="js/main.js"></script>
+    </body>
+</htmk>
